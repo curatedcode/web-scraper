@@ -4,7 +4,7 @@
   "description": "web scraper for amazon products",
   "main": "src/app.ts",
   "scripts": {
-    "test": "pnpm vitest"
+    "start": "pnpm tsc && node dist/app.js"
   },
   "author": "zack f",
   "license": "ISC",
