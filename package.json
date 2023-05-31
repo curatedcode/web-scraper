@@ -4,8 +4,8 @@
   "description": "web scraper for amazon products",
   "main": "src/app.ts",
   "scripts": {
-    "start": "pnpm tsc && node dist/app.js",
-    "dev": "pnpm tsc && nodemon --watch 'src/**/*' -e ts,js dist/app.js"
+    "start": "tsc && node dist/app.js",
+    "dev": "tsc --watch & nodemon dist/app.js"
   },
   "author": "zack f",
   "license": "ISC",
