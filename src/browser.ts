@@ -4,7 +4,7 @@ import stealthPlugin from "puppeteer-extra-plugin-stealth";
 puppeteer.use(stealthPlugin());
 
 const browserOptions: PuppeteerLaunchOptions = {
-  headless: false,
+  headless: "new",
   args: ["--disable-setuid-sandbox"],
   ignoreHTTPSErrors: true,
   defaultViewport: { height: 1080, width: 1920 },
