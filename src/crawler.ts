@@ -16,6 +16,7 @@ async function crawler({
   const allProductData: CrawlerReturnData = [];
 
   for (const url of productUrls) {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     console.log(url);
 
     // navigate to product page
