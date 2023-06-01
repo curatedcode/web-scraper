@@ -58,9 +58,8 @@ async function crawler({
       images.push({ url });
     }
 
-    await page.evaluate(() => window.scrollTo({ top: 3000 }));
-    // takes some time for walmart off screen data to load
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await page.evaluate(() => window.scrollTo({ top: 4000 }));
+    await page.waitForSelector("#item-review-section", { visible: true });
 
     // if product has reviews, get them
     const reviews: Reviews = [];
@@ -70,15 +69,17 @@ async function crawler({
     });
 
     if (hasReviews) {
-      const reviewsToGet = await page.$eval("ul", (el) =>
-        Array.from({ length: el.children.length })
-          .fill(null)
-          .map((_, i) => i + 1)
+      const reviewsToGet = await page.$eval(
+        "#item-review-section > div:nth-last-child(2) > div > ul",
+        (el) =>
+          Array.from({ length: el.children.length })
+            .fill(null)
+            .map((_, i) => i + 1)
       );
 
       for (const reviewIndex of reviewsToGet) {
         const rating = await page.$eval(
-          `ul.cc-2.cg-4.mt0.pr3.pl0.pl1-m > li:nth-child(${reviewIndex}) > div > div > div > div > div > div > span:nth-child(2)`,
+          `#item-review-section > div:nth-last-child(2) > div > ul > li:nth-child(${reviewIndex}) > div > div > div > div:first-child > div:first-child > div:first-child`,
           (el) => {
             const allText = el.textContent?.split("out") as string[];
             const rating = Number(allText[0]);
@@ -86,11 +87,11 @@ async function crawler({
           }
         );
         const title = await page.$eval(
-          `ul.cc-2.cg-4.mt0.pr3.pl0.pl1-m > li:nth-child(${reviewIndex}) > div > div > div > div:nth-child(2) > div`,
+          `#item-review-section > div:nth-last-child(2) > div > ul > li:nth-child(${reviewIndex}) > div > div > div > div:nth-child(2) > div`,
           (el) => el.textContent
         );
         const body = await page.$eval(
-          `ul.cc-2.cg-4.mt0.pr3.pl0.pl1-m > li:nth-child(${reviewIndex}) > div > div > div > div:nth-child(2) > span`,
+          `#item-review-section > div:nth-last-child(2) > div > ul > li:nth-child(${reviewIndex}) > div > div > div > div:nth-child(2) > span`,
           (el) => el.textContent
         );
         reviews.push({ rating, title, body });
