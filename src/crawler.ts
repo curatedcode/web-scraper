@@ -16,6 +16,7 @@ async function crawler({
   const allProductData: CrawlerReturnData = [];
 
   for (const url of productUrls) {
+    console.log(url);
     // slow down the crawler so its less likely to get flagged
     await new Promise((resolve) => setTimeout(resolve, 5_000));
 
