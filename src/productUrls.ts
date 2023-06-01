@@ -1325,7 +1325,7 @@ export const clothingUrls = [
   "https://www.walmart.com/ip/Garanimals-Baby-Toddler-Girls-Dolphin-Shorts-Multipack-4-Pack-Sizes-12M-5T/353462091?variantFieldId=actual_color",
   "https://www.walmart.com/ip/Garanimals-Baby-Toddler-Girl-Dolphin-Shorts-3-Pack-12-Months-5T/725093437?variantFieldId=actual_color",
   "https://www.walmart.com/ip/Garanimals-Baby-Girls-Toddler-Girls-Dolphin-Shorts-5-Pack-12M-5T/936583386?variantFieldId=actual_color",
-  "https://www.walmart.com/ip/Garanimals-Baby-Toddler-Girl-Dolphin-Shorts-3-Pack-12-Months-5T/208000441?variantFieldId=actual_color",
+  "https://www.walmart.com/ip/Garanimals-Baby-Girls-Short-Sleeve-T-Shirt-4-Pack-Sizes-0-3M-24M/696992809",
   "https://www.walmart.com/ip/Nine-Eight-Women-s-Wrap-Maxi-Dress/281751802?from=/search",
   "https://www.walmart.com/ip/Nine-Eight-Women-s-Wrap-Maxi-Dress/281751802",
   "https://www.walmart.com/ip/Nine-Eight-Women-Shirred-Waist-Wrap-Maxi-Dress/588831666?variantFieldId=actual_color",
