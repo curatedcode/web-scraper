@@ -110,6 +110,7 @@ async function crawler({
   browser.close();
 
   await writeFile(`output/${name}.json`, JSON.stringify(allProductData));
+  console.log(`Data for ${name} written to file`);
 }
 
 export default crawler;
