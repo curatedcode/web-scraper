@@ -3,7 +3,7 @@ const app = express();
 const port = 3003;
 
 import { startBrowser } from "./browser";
-import pageController from "./pageController";
+import crawlerController from "./crawlerController";
 
 app.get("/", (req, res) => {
   res.send("alive");
@@ -12,4 +12,4 @@ app.get("/", (req, res) => {
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
 const browserInstance = startBrowser();
-pageController(browserInstance);
+crawlerController(browserInstance);
