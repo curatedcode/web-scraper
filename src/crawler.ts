@@ -53,11 +53,13 @@ async function crawler({
         `div[data-testid='vertical-carousel-container'] > div:nth-child(${imageIndex}) > button > div > img`,
         (el) => el.src
       );
-      images.push({ url });
+
+      // check if img is a video, if so skip
+      const isVideo = url.includes("video-thumbnail");
+      if (!isVideo) {
+        images.push({ url });
+      }
     }
-    /**
-     * @TODO if link has "video-thumbnail" in it skip it
-     */
 
     await page.evaluate(() => window.scrollTo({ top: 4000 }));
     await page.waitForSelector("#item-review-section", { visible: true });
