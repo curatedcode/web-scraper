@@ -49,15 +49,15 @@ async function crawler({
           .map((_, i) => i + 1)
     );
     for (const imageIndex of imageIndexes) {
-      await page.click(
-        `div[data-testid='vertical-carousel-container'] > div:nth-child(${imageIndex})`
-      );
       const url = await page.$eval(
-        "div[data-testid='media-thumbnail'] > img",
+        `div[data-testid='vertical-carousel-container'] > div:nth-child(${imageIndex}) > button > div > img`,
         (el) => el.src
       );
       images.push({ url });
     }
+    /**
+     * @TODO if link has "video-thumbnail" in it skip it
+     */
 
     await page.evaluate(() => window.scrollTo({ top: 4000 }));
     await page.waitForSelector("#item-review-section", { visible: true });
