@@ -29,7 +29,7 @@ async function crawlerController(
 
   try {
     await crawler({
-      name: "book",
+      name: "books",
       browser,
       productUrls: bookUrls,
     });
@@ -79,7 +79,7 @@ async function crawlerController(
       productUrls: kidsUrls,
     });
     await crawler({
-      name: "baby",
+      name: "babies",
       browser,
       productUrls: babyUrls,
     });
@@ -99,7 +99,7 @@ async function crawlerController(
       productUrls: gardenUrls,
     });
     await crawler({
-      name: "outdoor",
+      name: "outdoors",
       browser,
       productUrls: outdoorUrls,
     });
