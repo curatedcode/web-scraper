@@ -33,7 +33,7 @@ gh repo clone curatedcode/web-scraper
 pnpm install
 ```
 
-1. Finally start the app
+5. Finally start the app
 
 ```
 pnpm start
